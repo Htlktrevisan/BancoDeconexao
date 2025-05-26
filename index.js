@@ -10,7 +10,14 @@ const app = express();
 
 app.use(express.json())
 
+app.post('/client', async (req, res) => {
 
+    await db.insertCustomer(req.body);
+
+    res.sendStatus(201);
+    });
+
+app.listen(port);
 // app.post("/client", async(req, res) =>{ 
 //     await db.insertCutomer(req.body)
 
@@ -21,9 +28,3 @@ app.use(express.json())
 
 // console.log("Backend Rodando!")
 
-app.post('/client', async (req, res) => {
-
-    await db.insertCustomer(req.body);
-
-    res.sendStatus(201);
-    });
