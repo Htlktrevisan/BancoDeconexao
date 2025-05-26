@@ -11,12 +11,19 @@ const app = express();
 app.use(express.json())
 
 
-app.post("/client", async(req, res) =>{ 
-    await db.insertCutomer(req.body)
+// app.post("/client", async(req, res) =>{ 
+//     await db.insertCutomer(req.body)
 
-    res.sendStatus(201)
-})
+//     res.sendStatus(201)
+// })
 
-module
+// module
 
-console.log("Backend Rodando!")
+// console.log("Backend Rodando!")
+
+app.post('/client', async (req, res) => {
+
+    await db.insertCustomer(req.body);
+
+    res.sendStatus(201);
+    });
