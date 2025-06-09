@@ -41,6 +41,10 @@ app.post("/client", async (req, res) => {
     res.sendStatus(201)
 });
 
+app.delete("/client/:id", async (req, res) => {
+    await db.deleteCustomer(req.params.id)
+    res.sendStatus(204)
+    })
 
 
 // permite que o browser possa acessar as informacoes atribuidas a essa porta
